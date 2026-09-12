@@ -1,0 +1,334 @@
+.counter-section {
+  position: relative;
+  padding: clamp(22px, 6vw, 10px) 0;
+  overflow: hidden;
+  /* background: linear-gradient(135deg, #fff8f4 0%, #ffffff 48%, #fff4fb 100%); */
+}
+
+.counter-container {
+  width: 100%;
+  max-width: 1320px;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 3vw, 32px);
+  position: relative;
+  z-index: 2;
+}
+
+.counter-bg {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.28;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.counter-bg-1 {
+  width: 220px;
+  height: 220px;
+  background: rgba(255, 138, 0, 0.18);
+  top: -40px;
+  left: -50px;
+  animation: floatBg 7s ease-in-out infinite alternate;
+}
+
+.counter-bg-2 {
+  width: 260px;
+  height: 260px;
+  background: rgba(255, 45, 149, 0.16);
+  bottom: -50px;
+  right: -40px;
+  animation: floatBg 9s ease-in-out infinite alternate;
+}
+
+.counter-heading {
+  max-width: 760px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.counter-tag {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  color: #111;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.counter-heading h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.9rem, 4vw, 3.4rem);
+  line-height: 1.08;
+  font-weight: 800;
+  color: #0e1015;
+}
+
+.counter-heading h2 span {
+ color: #8B9397;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.counter-heading p {
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #67707e;
+}
+
+.counter-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 22px);
+}
+
+.counter-card {
+  position: relative;
+  padding: 24px 18px;
+  border-radius: 24px;
+  text-align: center;
+  overflow: hidden;
+  isolation: isolate;
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.06),
+    0 18px 60px rgba(255, 45, 149, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  animation: fadeUpCard 0.9s ease both;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.counter-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.22), transparent 45%),
+    linear-gradient(135deg, rgba(255, 138, 0, 0.07), rgba(255, 45, 149, 0.05));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.counter-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(255, 138, 0, 0.25);
+  box-shadow:
+    0 18px 40px rgba(255, 138, 0, 0.12),
+    0 24px 70px rgba(255, 45, 149, 0.12),
+    0 0 25px rgba(255, 45, 149, 0.08);
+}
+
+.counter-card:hover::before {
+  opacity: 1;
+}
+
+.counter-line {
+  position: absolute;
+  top: 0;
+  left: 18px;
+  width: calc(100% - 36px);
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #8B9397, #000000);
+  opacity: 0.95;
+}
+
+.counter-shine {
+  position: absolute;
+  top: -120%;
+  left: -45%;
+  width: 65%;
+  height: 250%;
+  background: linear-gradient(
+    120deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.38) 50%,
+    transparent 80%
+  );
+  transform: rotate(18deg);
+  animation: shineMove 5.5s linear infinite;
+  pointer-events: none;
+}
+
+.counter-icon-wrap {
+  position: relative;
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter-icon-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 138, 0, 0.3),
+    rgba(255, 45, 149, 0.22)
+  );
+  filter: blur(14px);
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.counter-icon {
+  position: relative;
+  z-index: 2;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8B9397, #000000);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow:
+    0 10px 20px rgba(255, 45, 149, 0.18),
+    0 0 16px rgba(255, 138, 0, 0.12);
+}
+
+.counter-number {
+  margin: 0 0 8px;
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  line-height: 1;
+  font-weight: 800;
+  color: #111;
+}
+
+.counter-title {
+  margin: 0 0 8px;
+  font-size: 1.04rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.counter-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #69717f;
+}
+
+@keyframes fadeUpCard {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatBg {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(18px, 22px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.88;
+  }
+  50% {
+    transform: scale(1.14);
+    opacity: 1;
+  }
+}
+
+@keyframes shineMove {
+  0% {
+    transform: translateX(-160%) rotate(18deg);
+  }
+  100% {
+    transform: translateX(280%) rotate(18deg);
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .counter-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767.98px) {
+  .counter-section {
+    padding: 48px 0;
+  }
+
+  .counter-heading {
+    margin-bottom: 24px;
+  }
+
+  .counter-heading h2 {
+    font-size: 2rem;
+  }
+
+  .counter-heading p {
+    font-size: 14px;
+  }
+
+  .counter-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .counter-card {
+    padding: 22px 16px;
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .counter-container {
+    padding-inline: 14px;
+  }
+
+  .counter-tag {
+    font-size: 12px;
+    padding: 7px 13px;
+  }
+
+  .counter-icon-wrap {
+    width: 58px;
+    height: 58px;
+  }
+
+  .counter-icon {
+    width: 46px;
+    height: 46px;
+    font-size: 18px;
+  }
+
+  .counter-number {
+    font-size: 1.85rem;
+  }
+
+  .counter-title {
+    font-size: 1rem;
+  }
+
+  .counter-text {
+    font-size: 13px;
+  }
+}

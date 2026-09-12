@@ -1,0 +1,255 @@
+.beforeSection {
+  position: relative;
+  overflow: hidden;
+  padding: 10px 24px 10px;
+ 
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.beforeSection__container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header styling if needed (Aap chahein toh upar ka content rakh sakte hain) */
+.beforeSection__header {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.beforeSection__title {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 48px);
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Main Showcase Card Area */
+.beforeSection__preview {
+  position: relative;
+  width: 100%;
+}
+
+.beforeSection__heroCard {
+  position: relative;
+  width: 100%;
+  min-height: 650px;
+  border-radius: 24px;
+  overflow: hidden;
+  /* Dark background wrapper with subtle inner gradient */
+  background: linear-gradient(135deg, #1d1715 0%, #110d0c 100%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Dark Background texture image layer (e.g., Smoke texture background) */
+.beforeSection__bgImageWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.35;
+}
+
+.beforeSection__bgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(30%) contrast(110%);
+}
+
+/* Absolute Toggle Element - Top Left corner like image */
+.beforeSection__toggle {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 10;
+}
+
+.beforeSection__toggleBtn {
+  min-width: 76px;
+  padding: 8px 14px;
+  border-radius: 100px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.beforeSection__toggleBtn:hover {
+  color: #8d1212;
+}
+
+.beforeSection__toggleBtn--active {
+  background: #8B9397; /* High energy orange highlight */
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(255, 92, 0, 0.35);
+}
+
+/* Central Inner Mockup Screen Frame */
+.beforeSection__mainGlass {
+  position: absolute;
+  top: 85px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(88%, 1040px);
+  padding: 8px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.04);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+
+.beforeSection__mainGlassInner {
+  position: relative;
+  width: 100%;
+  height: 440px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.beforeSection__mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+/* Glassmorphic Stats Overlay Rows at Bottom */
+.beforeSection__statsRow {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(92%, 1100px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  z-index: 5;
+}
+
+.beforeSection__statCard {
+  padding: 24px 28px;
+  border-radius: 16px;
+  /* Frosted translucent glassmorphism */
+  background: rgba(250, 250, 250, 0.20);
+  -webkit-backdrop-filter: blur(25px) saturate(130%);
+  backdrop-filter: blur(10px) saturate(130%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.beforeSection__statCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 92, 0, 0.25);
+}
+
+.beforeSection__statValue {
+  display: flex;
+  align-items: baseline;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.beforeSection__statValue h3 {
+  margin: 0;
+  font-size: clamp(34px, 3.8vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.beforeSection__statValue span {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  margin-left: 2px;
+}
+
+.beforeSection__statCard p {
+  margin: 10px 0 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* Responsive Scaling for Tablets and Mobile devices */
+@media (max-width: 1024px) {
+  .beforeSection__heroCard {
+    min-height: 580px;
+  }
+  .beforeSection__mainGlass {
+    top: 100px;
+  }
+  .beforeSection__mainGlassInner {
+    height: 360px;
+  }
+  .beforeSection__statsRow {
+    bottom: 20px;
+    gap: 12px;
+  }
+  .beforeSection__statCard {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .beforeSection {
+    padding: 40px 16px;
+  }
+  
+  .beforeSection__heroCard {
+    min-height: auto;
+    padding-bottom: 24px;
+    border-radius: 18px;
+  }
+
+  .beforeSection__toggle {
+    top: 20px;
+    left: 20px;
+  }
+
+  /* Unstack layers for proper mobile fluid structure readability */
+  .beforeSection__mainGlass {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: calc(100% - 32px);
+    margin: 84px auto 20px;
+  }
+
+  .beforeSection__mainGlassInner {
+    height: 260px;
+  }
+
+  .beforeSection__statsRow {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    width: calc(100% - 32px);
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    gap: 12px;
+  }
+  
+  .beforeSection__statCard {
+    background: rgba(20, 19, 19, 0.8);
+  }
+}

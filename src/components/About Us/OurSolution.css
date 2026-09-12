@@ -1,0 +1,1217 @@
+.dzt-success-section {
+    --dzt-bg: #f5f5f2;
+    --dzt-card: #ffffff;
+    --dzt-dark: #0b0d10;
+    --dzt-text: #17191c;
+    --dzt-muted: #747a81;
+    --dzt-accent: #a2aaad;
+    --dzt-line: rgba(11,13,16,.10);
+
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    padding: 22px 0;
+
+    background:
+        radial-gradient(circle at 8% 20%,
+        rgba(162,170,173,.18),
+        transparent 27%),
+
+        radial-gradient(circle at 92% 80%,
+        rgba(162,170,173,.13),
+        transparent 24%),
+
+        var(--dzt-bg);
+}
+
+
+/* ================= BACKGROUND ================= */
+
+.dzt-bg-grid {
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+
+    background-image:
+        linear-gradient(rgba(10,12,15,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(10,12,15,.035) 1px, transparent 1px);
+
+    background-size: 52px 52px;
+
+    mask-image:
+        linear-gradient(to bottom,
+        transparent,
+        #000 18%,
+        #000 82%,
+        transparent);
+}
+
+.dzt-glow {
+    position: absolute;
+    z-index: -2;
+
+    border-radius: 50%;
+    filter: blur(100px);
+
+    pointer-events: none;
+}
+
+.dzt-glow-1 {
+    width: 330px;
+    height: 330px;
+
+    left: -150px;
+    top: 15%;
+
+    background: rgba(162,170,173,.22);
+}
+
+.dzt-glow-2 {
+    width: 280px;
+    height: 280px;
+
+    right: -110px;
+    bottom: 5%;
+
+    background: rgba(255,255,255,.85);
+}
+
+
+/* =========================================================
+   LEFT VISUAL
+========================================================= */
+
+.dzt-visual-wrap {
+    position: relative;
+
+    max-width: 590px;
+    min-height: 610px;
+
+    margin: auto;
+    padding: 42px 30px 45px;
+}
+
+
+/* ================= MAIN CARD ================= */
+
+.dzt-ecosystem-card {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 525px;
+
+    padding: 28px;
+
+    border-radius: 32px;
+
+    border: 1px solid rgba(255,255,255,.9);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.92),
+            rgba(235,237,236,.72)
+        );
+
+    box-shadow:
+        0 45px 100px rgba(20,25,30,.12),
+        inset 0 1px 0 rgba(255,255,255,1);
+
+    backdrop-filter: blur(18px);
+}
+
+
+/* card light shine */
+
+.dzt-ecosystem-card::before {
+    content: "";
+    position: absolute;
+
+    width: 220px;
+    height: 700px;
+
+    top: -200px;
+    left: -280px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.75),
+            transparent
+        );
+
+    transform: rotate(25deg);
+
+    animation: dztShine 8s linear infinite;
+}
+
+
+/* ================= CARD HEADER ================= */
+
+.dzt-card-top {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    padding-bottom: 22px;
+
+    border-bottom: 1px solid var(--dzt-line);
+}
+
+.dzt-micro-label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #8c9498;
+
+    font-size: 16px; /* Changed from 9px to 16px */
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.dzt-card-top h3 {
+    margin: 0;
+
+    color: var(--dzt-dark);
+
+    font-size: 21px;
+    font-weight: 650;
+    letter-spacing: -.6px;
+}
+
+.dzt-top-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #fff;
+    background: var(--dzt-dark);
+
+    box-shadow: 0 12px 25px rgba(0,0,0,.16);
+}
+
+
+/* =========================================================
+   ORBIT STAGE
+========================================================= */
+
+.dzt-orbit-stage {
+    position: relative;
+
+    height: 340px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* orbit circles */
+
+.dzt-orbit {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(10,12,15,.11);
+}
+
+.dzt-orbit-lg {
+    width: 270px;
+    height: 270px;
+
+    border-style: dashed;
+
+    animation: dztRotate 20s linear infinite;
+}
+
+.dzt-orbit-sm {
+    width: 190px;
+    height: 190px;
+
+    animation: dztRotateReverse 13s linear infinite;
+}
+
+.dzt-orbit-dot {
+    position: absolute;
+
+    width: 9px;
+    height: 9px;
+
+    top: -5px;
+    left: 50%;
+
+    border-radius: 50%;
+
+    background: var(--dzt-dark);
+
+    box-shadow:
+        0 0 0 7px rgba(11,13,16,.06);
+}
+
+
+/* ================= CENTER CORE ================= */
+
+.dzt-center-core {
+    position: relative;
+    z-index: 3;
+
+    width: 128px;
+    height: 128px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #121519,
+            #050607
+        );
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,.25),
+        0 0 0 14px rgba(11,13,16,.04);
+}
+
+.dzt-core-ring {
+    position: absolute;
+    inset: -10px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(11,13,16,.12);
+
+    animation: dztPulse 2.8s ease-in-out infinite;
+}
+
+.dzt-core-logo {
+    color: #fff;
+
+    font-size: 28px;
+    font-weight: 850;
+    letter-spacing: -2px;
+}
+
+.dzt-center-core small {
+    margin-top: 4px;
+
+    color: #9ea5a9;
+
+    font-size: 16px; /* Changed from 7px to 16px */
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   SERVICE CHIPS
+========================================================= */
+
+.dzt-service-chip {
+    position: absolute;
+    z-index: 5;
+
+    min-width: 155px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 12px;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(15,18,22,.08);
+
+    background: rgba(255,255,255,.90);
+
+    box-shadow:
+        0 16px 35px rgba(20,25,30,.10);
+
+    backdrop-filter: blur(12px);
+}
+
+.dzt-service-chip > span {
+    width: 35px;
+    height: 35px;
+
+    flex: 0 0 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    color: #fff;
+    background: var(--dzt-dark);
+}
+
+.dzt-service-chip small {
+    display: block;
+
+    color: #969ca1;
+
+    font-size: 16px; /* Changed from 7px to 16px */
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.dzt-service-chip strong {
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--dzt-dark);
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* chip positions */
+
+.dzt-chip-1 {
+    top: 34px;
+    left: 2px;
+
+    animation: dztFloat 4.2s ease-in-out infinite;
+}
+
+.dzt-chip-2 {
+    top: 48px;
+    right: -2px;
+
+    animation: dztFloat 5s ease-in-out infinite .4s;
+}
+
+.dzt-chip-3 {
+    bottom: 35px;
+    left: -2px;
+
+    animation: dztFloat 4.7s ease-in-out infinite .7s;
+}
+
+.dzt-chip-4 {
+    right: 0;
+    bottom: 26px;
+
+    animation: dztFloat 5.3s ease-in-out infinite 1s;
+}
+
+
+/* =========================================================
+   ANALYTICS BOTTOM
+========================================================= */
+
+.dzt-analytics-row {
+    position: relative;
+    z-index: 4;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid var(--dzt-line);
+}
+
+.dzt-analytics-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.dzt-analytics-icon {
+    width: 33px;
+    height: 33px;
+
+    flex: 0 0 33px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    color: var(--dzt-dark);
+
+    background: rgba(11,13,16,.06);
+}
+
+.dzt-analytics-item strong {
+    display: block;
+
+    color: var(--dzt-dark);
+
+    font-size: 11px;
+}
+
+.dzt-analytics-item small {
+    display: block;
+
+    margin-top: 1px;
+
+    color: #8c9297;
+
+    font-size: 16px; /* Changed from 8px to 16px */
+}
+
+.dzt-divider {
+    width: 1px;
+    height: 32px;
+
+    background: var(--dzt-line);
+}
+
+
+/* =========================================================
+   FLOATING ELEMENTS
+========================================================= */
+
+.dzt-floating-pill {
+    position: absolute;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 11px 16px;
+
+    border-radius: 50px;
+
+    color: #fff;
+
+    background: rgba(11,13,16,.92);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.18);
+
+    backdrop-filter: blur(15px);
+
+    font-size: 16px; /* Changed from 9px to 16px */
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.dzt-pill-top {
+    top: 8px;
+    left: 5px;
+
+    animation: dztFloat 4s ease-in-out infinite;
+}
+
+.dzt-status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #d9ff73;
+
+    box-shadow:
+        0 0 0 5px rgba(217,255,115,.10),
+        0 0 14px rgba(217,255,115,.65);
+}
+
+
+/* project floating card */
+
+.dzt-floating-project {
+    position: absolute;
+    z-index: 10;
+
+    right: -5px;
+    bottom: 10px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 13px 17px;
+
+    border-radius: 17px;
+
+    background: #fff;
+
+    border: 1px solid rgba(15,18,22,.08);
+
+    box-shadow:
+        0 22px 50px rgba(20,25,30,.14);
+
+    animation: dztFloat 5s ease-in-out infinite .6s;
+}
+
+.dzt-project-icon {
+    width: 39px;
+    height: 39px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    color: #fff;
+    background: var(--dzt-dark);
+}
+
+.dzt-floating-project small {
+    display: block;
+
+    color: #949a9f;
+
+    font-size: 16px; /* Changed from 7px to 16px */
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.dzt-floating-project strong {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--dzt-dark);
+
+    font-size: 11px;
+}
+
+
+/* side badge */
+
+.dzt-side-badge {
+    position: absolute;
+    z-index: 8;
+
+    left: -8px;
+    bottom: 72px;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 10px 13px;
+
+    border-radius: 14px;
+
+    color: #fff;
+    background: var(--dzt-dark);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.16);
+}
+
+.dzt-side-badge strong {
+    font-size: 20px;
+}
+
+.dzt-side-badge span {
+    color: #aab0b4;
+
+    font-size: 16px; /* Changed from 7px to 16px */
+    line-height: 1.4;
+    letter-spacing: .6px;
+}
+
+
+/* =========================================================
+   RIGHT CONTENT
+========================================================= */
+
+.dzt-content {
+    max-width: 620px;
+    margin-left: auto;
+}
+
+.dzt-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+    color: #747b80;
+
+    font-size: 16px; /* Changed from 10px to 16px */
+    font-weight: 750;
+    letter-spacing: 2px;
+}
+
+.dzt-eyebrow-line {
+    width: 34px;
+    height: 1px;
+
+    background: var(--dzt-dark);
+}
+
+
+/* ================= TITLE ================= */
+
+.dzt-title {
+    margin: 0;
+
+    color: var(--dzt-text);
+
+    font-size: clamp(42px, 5vw, 68px);
+    line-height: .98;
+
+    font-weight: 550;
+    letter-spacing: -3.6px;
+}
+
+.dzt-title span {
+    display: block;
+
+    margin-top: 7px;
+
+    color: transparent;
+
+    -webkit-text-stroke:
+        1.3px rgba(20,23,27,.55);
+}
+
+
+/* description */
+
+.dzt-description {
+    max-width: 565px;
+
+    margin: 27px 0 31px;
+
+    color: var(--dzt-muted);
+
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   FEATURE LIST
+========================================================= */
+
+.dzt-feature-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.dzt-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 11px 12px;
+
+    border-radius: 14px;
+
+    border: 1px solid transparent;
+
+    transition:
+        transform .35s ease,
+        background .35s ease,
+        border-color .35s ease;
+}
+
+.dzt-feature-item:hover {
+    transform: translateX(8px);
+
+    background: rgba(255,255,255,.70);
+
+    border-color: rgba(15,18,22,.07);
+}
+
+.dzt-check {
+    width: 31px;
+    height: 31px;
+
+    flex: 0 0 31px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    color: #fff;
+    background: var(--dzt-dark);
+
+    font-size: 12px;
+
+    transition: transform .35s ease;
+}
+
+.dzt-feature-item:hover .dzt-check {
+    transform: rotate(-8deg) scale(1.06);
+}
+
+.dzt-feature-item strong {
+    display: block;
+
+    color: var(--dzt-text);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.dzt-feature-item small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #8a9095;
+
+    font-size: 16px; /* Changed from 10px to 16px */
+}
+
+
+/* =========================================================
+   BOTTOM CARD
+========================================================= */
+
+.dzt-bottom-card {
+    position: relative;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 150px 1px 1fr;
+
+    align-items: center;
+    gap: 24px;
+
+    margin-top: 30px;
+    padding: 22px 24px;
+
+    border-radius: 22px;
+
+    color: #fff;
+
+    background:
+        radial-gradient(circle at 90% 20%,
+        rgba(255,255,255,.12),
+        transparent 25%),
+
+        var(--dzt-dark);
+
+    box-shadow:
+        0 24px 55px rgba(15,18,22,.15);
+}
+
+.dzt-number {
+    display: block;
+
+    font-size: 34px;
+    line-height: 1;
+
+    font-weight: 750;
+    letter-spacing: -2px;
+}
+
+.dzt-number-block p {
+    margin: 7px 0 0;
+
+    color: #9ca3a7;
+
+    font-size: 16px; /* Changed from 9px to 16px */
+    line-height: 1.45;
+}
+
+.dzt-bottom-line {
+    width: 1px;
+    height: 58px;
+
+    background: rgba(255,255,255,.12);
+}
+
+.dzt-action-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 18px;
+}
+
+.dzt-action-text small {
+    display: block;
+
+    color: #8f969b;
+
+    font-size: 16px; /* Changed from 8px to 16px */
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.dzt-action-text strong {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.dzt-circle-btn {
+    width: 48px;
+    height: 48px;
+
+    flex: 0 0 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: var(--dzt-dark);
+    background: #fff;
+
+    text-decoration: none;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+.dzt-circle-btn:hover {
+    color: var(--dzt-dark);
+
+    transform: rotate(45deg) scale(1.06);
+
+    box-shadow:
+        0 10px 25px rgba(255,255,255,.16);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes dztRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dztRotateReverse {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes dztFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+@keyframes dztPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: .6;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+}
+
+@keyframes dztShine {
+    0% {
+        left: -280px;
+    }
+
+    100% {
+        left: 130%;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 1199px) {
+
+    .dzt-visual-wrap {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .dzt-service-chip {
+        min-width: 142px;
+    }
+
+    .dzt-title {
+        font-size: 54px;
+    }
+}
+
+
+@media (max-width: 991px) {
+
+    .dzt-success-section {
+        padding: 95px 0;
+    }
+
+    .dzt-visual-wrap {
+        max-width: 650px;
+        min-height: 600px;
+    }
+
+    .dzt-content {
+        max-width: 700px;
+        margin: 20px auto 0;
+    }
+
+    .dzt-title {
+        font-size: clamp(45px, 8vw, 65px);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .dzt-success-section {
+        padding: 75px 0;
+    }
+
+    .dzt-visual-wrap {
+        min-height: auto;
+
+        padding:
+            38px 0
+            70px;
+    }
+
+    .dzt-ecosystem-card {
+        min-height: auto;
+
+        padding: 20px 14px;
+
+        border-radius: 24px;
+    }
+
+    .dzt-orbit-stage {
+        height: 310px;
+    }
+
+    .dzt-orbit-lg {
+        width: 225px;
+        height: 225px;
+    }
+
+    .dzt-orbit-sm {
+        width: 160px;
+        height: 160px;
+    }
+
+    .dzt-center-core {
+        width: 108px;
+        height: 108px;
+    }
+
+    .dzt-service-chip {
+        min-width: auto;
+
+        padding: 8px;
+    }
+
+    .dzt-service-chip > span {
+        width: 34px;
+        height: 34px;
+
+        flex-basis: 34px;
+    }
+
+    .dzt-service-chip div {
+        display: none;
+    }
+
+    .dzt-chip-1 {
+        left: 5px;
+    }
+
+    .dzt-chip-2 {
+        right: 5px;
+    }
+
+    .dzt-chip-3 {
+        left: 5px;
+    }
+
+    .dzt-chip-4 {
+        right: 5px;
+    }
+
+    .dzt-analytics-row {
+        gap: 6px;
+    }
+
+    .dzt-analytics-item {
+        flex-direction: column;
+        text-align: center;
+
+        gap: 5px;
+    }
+
+    .dzt-analytics-item strong {
+        font-size: 9px;
+    }
+
+    .dzt-analytics-item small {
+        font-size: 16px; /* Changed from 7px to 16px */
+    }
+
+    .dzt-divider {
+        height: 45px;
+    }
+
+    .dzt-floating-project {
+        right: 5px;
+        bottom: 12px;
+    }
+
+    .dzt-side-badge {
+        left: 5px;
+        bottom: 18px;
+    }
+
+    .dzt-title {
+        font-size: clamp(39px, 12vw, 53px);
+
+        letter-spacing: -2.5px;
+    }
+
+    .dzt-description {
+        font-size: 13px;
+    }
+
+    .dzt-bottom-card {
+        grid-template-columns: 1fr;
+
+        gap: 17px;
+    }
+
+    .dzt-bottom-line {
+        width: 100%;
+        height: 1px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .dzt-card-top h3 {
+        font-size: 18px;
+    }
+
+    .dzt-pill-top {
+        left: 4px;
+    }
+
+    .dzt-orbit-stage {
+        height: 275px;
+    }
+
+    .dzt-orbit-lg {
+        width: 195px;
+        height: 195px;
+    }
+
+    .dzt-orbit-sm {
+        width: 140px;
+        height: 140px;
+    }
+
+    .dzt-center-core {
+        width: 94px;
+        height: 94px;
+    }
+
+    .dzt-core-logo {
+        font-size: 23px;
+    }
+
+    .dzt-floating-project {
+        position: relative;
+
+        right: auto;
+        bottom: auto;
+
+        width: max-content;
+        max-width: 100%;
+
+        margin:
+            -42px 0
+            0 auto;
+    }
+
+    .dzt-side-badge {
+        display: none;
+    }
+
+    .dzt-title {
+        font-size: 39px;
+    }
+
+    .dzt-feature-item {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .dzt-orbit,
+    .dzt-core-ring,
+    .dzt-service-chip,
+    .dzt-floating-pill,
+    .dzt-floating-project,
+    .dzt-ecosystem-card::before {
+        animation: none !important;
+    }
+}

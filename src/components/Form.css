@@ -1,0 +1,869 @@
+/* ==========================================================
+   DEZORA CONTACT FORM — light same design
+========================================================== */
+
+.dzform-section{
+  --dzf-bg:#f5f6f3;
+  --dzf-white:#ffffff;
+  --dzf-dark:#0b0d10;
+  --dzf-text:#171a1d;
+  --dzf-muted:#667075;
+  --dzf-soft:#8b9398;
+  --dzf-accent:#a2aaad;
+  --dzf-line:rgba(15,18,22,.08);
+
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  padding:30px 0;
+  background:linear-gradient(135deg,#fafbf9,#f1f3f0);
+}
+
+/* background simplified */
+.dzform-grid,
+.dzform-orb{
+  display:none;
+}
+
+/* left intro */
+.dzform-intro{
+  position:relative;
+  height:100%;
+  padding:12px 12px 12px 0;
+}
+
+.dzform-kicker{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:18px;
+  color:#747b80;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:1.6px;
+}
+
+.dzform-kicker-line{
+  width:34px;
+  height:1px;
+  background:var(--dzf-dark);
+}
+
+.dzform-intro h2{
+  margin:0;
+  color:var(--dzf-text);
+  font-size:clamp(34px,5vw,60px);
+  line-height:1.02;
+  font-weight:600;
+  letter-spacing:-1.6px;
+}
+
+.dzform-intro h2 span{
+  display:block;
+  margin-top:6px;
+  color:#80888d;
+}
+
+.dzform-intro-text{
+  max-width:520px;
+  margin:22px 0 0;
+  color:var(--dzf-muted);
+  font-size:16px;
+  line-height:1.75;
+}
+
+/* availability */
+.dzform-availability{
+  position:relative;
+  width:340px;
+  height:340px;
+  max-width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:34px auto 30px;
+}
+
+.dzform-ring{
+  position:absolute;
+  border-radius:50%;
+  border:1px solid rgba(15,18,22,.10);
+}
+
+.dzform-ring-one{
+  width:260px;
+  height:260px;
+  border-style:dashed;
+  animation:dzfRotate 28s linear infinite;
+}
+
+.dzform-ring-one::before{
+  content:"";
+  position:absolute;
+  width:7px;
+  height:7px;
+  top:-4px;
+  left:50%;
+  border-radius:50%;
+  background:var(--dzf-dark);
+  box-shadow:0 0 0 5px rgba(15,18,22,.05);
+}
+
+.dzform-ring-two{
+  width:190px;
+  height:190px;
+  animation:dzfRotateReverse 22s linear infinite;
+}
+
+.dzform-availability-core{
+  position:relative;
+  z-index:4;
+  width:150px;
+  height:150px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  border-radius:50%;
+  color:#fff;
+  background:linear-gradient(145deg,#202429,#080a0d);
+  box-shadow:0 18px 40px rgba(15,18,22,.16);
+  animation:dzfCoreFloat 6s ease-in-out infinite;
+}
+
+.dzform-live-dot{
+  width:8px;
+  height:8px;
+  margin-bottom:10px;
+  border-radius:50%;
+  background:#75e98b;
+  box-shadow:0 0 0 5px rgba(117,233,139,.10);
+  animation:dzfLivePulse 2.2s ease-in-out infinite;
+}
+
+.dzform-availability-core small{
+  color:#a4abb0;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+.dzform-availability-core strong{
+  margin-top:8px;
+  font-size:16px;
+  line-height:1.45;
+  font-weight:600;
+}
+
+.dzform-float-tag{
+  position:absolute;
+  z-index:5;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  padding:9px 12px;
+  border-radius:999px;
+  color:#202327;
+  background:#fff;
+  border:1px solid rgba(15,18,22,.08);
+  box-shadow:0 8px 18px rgba(25,30,35,.07);
+  font-size:13px;
+  font-weight:600;
+  transition:transform .25s ease;
+}
+
+.dzform-float-tag i{
+  color:#747c81;
+}
+
+.dzform-tag-one{
+  top:30px;
+  left:15px;
+  animation:dzfFloat 6s ease-in-out infinite;
+}
+
+.dzform-tag-two{
+  top:70px;
+  right:0;
+  animation:dzfFloat 6s ease-in-out infinite .5s;
+}
+
+.dzform-tag-three{
+  bottom:55px;
+  left:0;
+  animation:dzfFloat 6s ease-in-out infinite .8s;
+}
+
+.dzform-tag-four{
+  right:20px;
+  bottom:25px;
+  animation:dzfFloat 6s ease-in-out infinite 1s;
+}
+
+/* trust strip */
+.dzform-trust{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  max-width:460px;
+  padding-top:22px;
+  border-top:1px solid rgba(15,18,22,.09);
+}
+
+.dzform-trust-icon{
+  width:44px;
+  height:44px;
+  flex:0 0 44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  color:#fff;
+  background:var(--dzf-dark);
+}
+
+.dzform-trust small{
+  display:block;
+  color:#8a9196;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+.dzform-trust strong{
+  display:block;
+  margin-top:4px;
+  color:var(--dzf-text);
+  font-size:15px;
+  font-weight:600;
+  line-height:1.5;
+}
+
+/* form card */
+.dzform-card{
+  position:relative;
+  overflow:hidden;
+  height:100%;
+  padding:30px;
+  border-radius:24px;
+  border:1px solid rgba(15,18,22,.08);
+  background:#fff;
+  box-shadow:0 16px 40px rgba(25,30,35,.08);
+}
+
+.dzform-card::before{
+  display:none;
+}
+
+/* header */
+.dzform-card-header{
+  position:relative;
+  z-index:3;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  margin-bottom:28px;
+  padding-bottom:20px;
+  border-bottom:1px solid rgba(15,18,22,.09);
+}
+
+.dzform-card-header > div:first-child span{
+  display:block;
+  margin-bottom:8px;
+  color:#8b9297;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:1.3px;
+}
+
+.dzform-card-header h3{
+  margin:0;
+  color:var(--dzf-text);
+  font-size:28px;
+  font-weight:600;
+  letter-spacing:-.6px;
+}
+
+.dzform-header-mark{
+  width:50px;
+  height:50px;
+  flex:0 0 50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:15px;
+  color:#fff;
+  background:var(--dzf-dark);
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:-.5px;
+  box-shadow:0 10px 22px rgba(15,18,22,.12);
+  transition:transform .25s ease;
+}
+
+.dzform-card:hover .dzform-header-mark{
+  transform:rotate(0deg) scale(1.03);
+}
+
+.dzform-main{
+  position:relative;
+  z-index:3;
+}
+
+/* fields */
+.dzform-field{
+  position:relative;
+}
+
+.dzform-field input{
+  width:100%;
+  height:60px;
+  padding:22px 46px 8px 16px;
+  border:1px solid rgba(15,18,22,.10);
+  border-radius:14px;
+  outline:none;
+  color:var(--dzf-text);
+  background:#f8f9f7;
+  font-size:15px;
+  transition:border-color .25s ease, background .25s ease, box-shadow .25s ease;
+}
+
+.dzform-field label{
+  position:absolute;
+  left:16px;
+  top:50%;
+  transform:translateY(-50%);
+  color:#8b9297;
+  font-size:14px;
+  pointer-events:none;
+  transition:all .2s ease;
+}
+
+.dzform-field input:focus,
+.dzform-field input:not(:placeholder-shown){
+  background:#fff;
+  border-color:rgba(15,18,22,.24);
+}
+
+.dzform-field input:focus{
+  box-shadow:0 8px 20px rgba(25,30,35,.06);
+}
+
+.dzform-field input:focus + label,
+.dzform-field input:not(:placeholder-shown) + label{
+  top:12px;
+  transform:none;
+  color:#6e757a;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.5px;
+}
+
+.dzform-field-icon{
+  position:absolute;
+  top:50%;
+  right:16px;
+  transform:translateY(-50%);
+  color:#8d9499;
+  font-size:16px;
+  transition:color .25s ease, transform .25s ease;
+}
+
+.dzform-field:focus-within .dzform-field-icon{
+  color:var(--dzf-dark);
+  transform:translateY(-50%) scale(1.05);
+}
+
+/* group block */
+.dzform-group-block{
+  margin-top:26px;
+}
+
+.dzform-group-title{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:14px;
+}
+
+.dzform-group-title > span{
+  width:34px;
+  height:34px;
+  flex:0 0 34px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  color:#fff;
+  background:var(--dzf-dark);
+  font-size:12px;
+  font-weight:700;
+}
+
+.dzform-group-title strong{
+  display:block;
+  color:var(--dzf-text);
+  font-size:16px;
+  font-weight:700;
+}
+
+.dzform-group-title small{
+  display:block;
+  margin-top:3px;
+  color:#93999e;
+  font-size:13px;
+}
+
+/* service choices */
+.dzform-service-options{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.dzform-choice{
+  margin:0;
+  cursor:pointer;
+}
+
+.dzform-choice input{
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
+
+.dzform-choice span{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:11px 14px;
+  border-radius:999px;
+  color:#676e73;
+  background:#f8f9f7;
+  border:1px solid rgba(15,18,22,.09);
+  font-size:14px;
+  font-weight:600;
+  transition:color .25s ease, background .25s ease, border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+
+.dzform-choice span:hover{
+  transform:translateY(-2px);
+  border-color:rgba(15,18,22,.18);
+}
+
+.dzform-choice input:checked + span{
+  color:#fff;
+  background:var(--dzf-dark);
+  border-color:var(--dzf-dark);
+  box-shadow:0 8px 18px rgba(15,18,22,.12);
+}
+
+/* budget */
+.dzform-budget-options{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+}
+
+.dzform-budget{
+  margin:0;
+  cursor:pointer;
+}
+
+.dzform-budget input{
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
+
+.dzform-budget span{
+  min-height:46px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px;
+  border-radius:12px;
+  color:#737a7f;
+  background:#f8f9f7;
+  border:1px solid rgba(15,18,22,.09);
+  text-align:center;
+  font-size:14px;
+  font-weight:600;
+  transition:all .25s ease;
+}
+
+.dzform-budget span:hover{
+  transform:translateY(-2px);
+  border-color:rgba(15,18,22,.18);
+}
+
+.dzform-budget input:checked + span{
+  color:#fff;
+  background:var(--dzf-dark);
+  border-color:var(--dzf-dark);
+  box-shadow:0 8px 18px rgba(15,18,22,.12);
+}
+
+/* message field */
+.dzform-message-field{
+  position:relative;
+  margin-top:26px;
+}
+
+.dzform-message-field textarea{
+  width:100%;
+  min-height:150px;
+  resize:vertical;
+  padding:26px 48px 16px 16px;
+  border:1px solid rgba(15,18,22,.10);
+  border-radius:16px;
+  outline:none;
+  color:var(--dzf-text);
+  background:#f8f9f7;
+  font-size:15px;
+  line-height:1.7;
+  transition:border-color .25s ease, background .25s ease, box-shadow .25s ease;
+}
+
+.dzform-message-field label{
+  position:absolute;
+  left:16px;
+  top:20px;
+  max-width:calc(100% - 70px);
+  color:#8b9297;
+  font-size:14px;
+  pointer-events:none;
+  transition:all .2s ease;
+}
+
+.dzform-message-field textarea:focus,
+.dzform-message-field textarea:not(:placeholder-shown){
+  background:#fff;
+  border-color:rgba(15,18,22,.24);
+}
+
+.dzform-message-field textarea:focus{
+  box-shadow:0 8px 20px rgba(25,30,35,.06);
+}
+
+.dzform-message-field textarea:focus + label,
+.dzform-message-field textarea:not(:placeholder-shown) + label{
+  top:9px;
+  color:#6e757a;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.5px;
+}
+
+.dzform-message-icon{
+  position:absolute;
+  top:18px;
+  right:17px;
+  color:#8d9499;
+  transition:color .25s ease;
+}
+
+.dzform-message-field:focus-within .dzform-message-icon{
+  color:var(--dzf-dark);
+}
+
+/* submit area */
+.dzform-submit-area{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  margin-top:24px;
+  padding-top:22px;
+  border-top:1px solid rgba(15,18,22,.09);
+}
+
+.dzform-submit-note{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  color:#8a9196;
+  font-size:13px;
+  line-height:1.5;
+}
+
+.dzform-submit-note i{
+  color:#555c61;
+}
+
+.dzform-submit-note strong{
+  color:#33383c;
+}
+
+.dzform-submit-btn{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:16px;
+  padding:8px 8px 8px 18px;
+  border:0;
+  border-radius:999px;
+  color:#fff;
+  background:var(--dzf-dark);
+  font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 12px 28px rgba(15,18,22,.14);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.dzform-btn-icon{
+  width:40px;
+  height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  color:var(--dzf-dark);
+  background:#fff;
+  transition:transform .25s ease;
+}
+
+.dzform-submit-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 16px 34px rgba(15,18,22,.18);
+}
+
+.dzform-submit-btn:hover .dzform-btn-icon{
+  transform:rotate(20deg);
+}
+
+/* success */
+.dzform-success{
+  display:none;
+  align-items:center;
+  gap:12px;
+  margin-top:18px;
+  padding:14px 16px;
+  border-radius:14px;
+  border:1px solid rgba(54,150,80,.15);
+  background:rgba(94,205,118,.08);
+}
+
+.dzform-success.show{
+  display:flex;
+  animation:dzfSuccessIn .35s ease forwards;
+}
+
+.dzform-success > span{
+  width:36px;
+  height:36px;
+  flex:0 0 36px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  color:#fff;
+  background:#30944a;
+}
+
+.dzform-success strong{
+  display:block;
+  color:#26362a;
+  font-size:15px;
+}
+
+.dzform-success small{
+  display:block;
+  margin-top:3px;
+  color:#68766b;
+  font-size:13px;
+  line-height:1.5;
+}
+
+/* validation */
+.dzform-field input.dzf-invalid,
+.dzform-message-field textarea.dzf-invalid{
+  border-color:rgba(205,60,60,.55);
+  background:rgba(255,245,245,.95);
+}
+
+/* subtle animations */
+@keyframes dzfRotate{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
+}
+
+@keyframes dzfRotateReverse{
+  from{transform:rotate(360deg);}
+  to{transform:rotate(0deg);}
+}
+
+@keyframes dzfFloat{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-5px);}
+}
+
+@keyframes dzfCoreFloat{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-4px);}
+}
+
+@keyframes dzfLivePulse{
+  0%,100%{transform:scale(1);opacity:1;}
+  50%{transform:scale(.86);opacity:.7;}
+}
+
+@keyframes dzfSuccessIn{
+  from{opacity:0;transform:translateY(6px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* responsive */
+@media(max-width:1199px){
+  .dzform-card{
+    padding:28px;
+  }
+
+  .dzform-budget-options{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:991px){
+  .dzform-section{
+    padding:80px 0;
+  }
+
+  .dzform-intro{
+    padding-right:0;
+  }
+
+  .dzform-intro h2{
+    font-size:clamp(36px,8vw,54px);
+  }
+
+  .dzform-availability{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .dzform-trust{
+    margin-bottom:20px;
+  }
+}
+
+@media(max-width:767px){
+  .dzform-section{
+    padding:65px 0;
+  }
+
+  .dzform-intro h2{
+    font-size:clamp(30px,10vw,42px);
+    letter-spacing:-1.2px;
+  }
+
+  .dzform-intro-text{
+    font-size:15px;
+  }
+
+  .dzform-card{
+    padding:22px 18px;
+    border-radius:20px;
+  }
+
+  .dzform-card-header h3{
+    font-size:24px;
+  }
+
+  .dzform-header-mark{
+    width:44px;
+    height:44px;
+    flex-basis:44px;
+  }
+
+  .dzform-submit-area{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .dzform-submit-btn{
+    width:100%;
+    justify-content:space-between;
+  }
+}
+
+@media(max-width:480px){
+  .dzform-availability{
+    width:300px;
+    height:300px;
+  }
+
+  .dzform-ring-one{
+    width:220px;
+    height:220px;
+  }
+
+  .dzform-ring-two{
+    width:165px;
+    height:165px;
+  }
+
+  .dzform-availability-core{
+    width:132px;
+    height:132px;
+  }
+
+  .dzform-float-tag{
+    padding:8px 10px;
+    font-size:12px;
+  }
+
+  .dzform-tag-one{left:0;}
+  .dzform-tag-two{right:0;}
+  .dzform-tag-three{left:0;}
+  .dzform-tag-four{right:5px;}
+
+  .dzform-budget-options{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .dzform-service-options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+  }
+
+  .dzform-choice span{
+    height:100%;
+    justify-content:center;
+    padding:10px 8px;
+    text-align:center;
+    font-size:13px;
+  }
+
+  .dzform-card-header{
+    align-items:flex-start;
+  }
+}
+
+@media(max-width:360px){
+  .dzform-service-options,
+  .dzform-budget-options{
+    grid-template-columns:1fr;
+  }
+
+  .dzform-availability{
+    transform:scale(.94);
+    margin-left:-6px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .dzform-ring,
+  .dzform-availability-core,
+  .dzform-float-tag,
+  .dzform-live-dot,
+  .dzform-submit-btn,
+  .dzform-btn-icon,
+  .dzform-header-mark{
+    animation:none !important;
+    transition:none !important;
+  }
+}

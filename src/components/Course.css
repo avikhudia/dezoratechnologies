@@ -1,0 +1,285 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ps-section {
+  padding: 20px 0;
+  background: #fff;
+  overflow: hidden;
+}
+.text-course {
+  text-align: center;
+}
+.ps-container {
+  width: min(100% - 24px, 1280px);
+  margin: 0 auto;
+}
+
+.ps-slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.ps-track {
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+  width: max-content;
+  will-change: transform;
+}
+
+.ps-item {
+  flex: 0 0 auto;
+}
+
+.ps-card {
+  position: relative;
+  width: clamp(260px, 22vw, 300px);
+  height: clamp(340px, 32vw, 420px);
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #111;
+}
+
+.ps-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.ps-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 36%;
+  background: rgba(77, 62, 54, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  mask: linear-gradient(
+    0deg,
+    rgb(0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.98) 40.2403%,
+    rgba(0, 0, 0, 0.9) 55%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask: linear-gradient(
+    0deg,
+    rgb(0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.98) 40.2403%,
+    rgba(0, 0, 0, 0.9) 55%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 1;
+  transition: 0.45s ease;
+  pointer-events: none;
+}
+
+.ps-visible {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  z-index: 3;
+  transition: 0.45s ease;
+}
+
+.ps-visible h4 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(22px, 2vw, 30px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ps-logo-box {
+  width: 110px;
+  max-width: 100%;
+}
+
+.ps-logo-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.ps-overlay {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  z-index: 4;
+  color: #fff;
+  transform: translateY(70px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ps-badge {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: #8B9397;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.ps-overlay h3 {
+  font-size: clamp(22px, 2vw, 30px);
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.ps-overlay p {
+  color: #ddd;
+  margin-bottom: 16px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.ps-overlay a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.ps-card:hover .ps-image {
+  transform: scale(1.08);
+}
+
+.ps-card:hover::after {
+  height: 100%;
+}
+
+.ps-card:hover .ps-visible {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+
+.ps-card:hover .ps-overlay {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  .ps-section {
+    padding: 70px 0;
+  }
+
+  .ps-track {
+    gap: 18px;
+  }
+
+  .ps-card {
+    width: 280px;
+    height: 390px;
+    border-radius: 22px;
+  }
+
+  .ps-visible,
+  .ps-overlay {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+  .ps-section {
+    padding: 55px 0;
+  }
+
+  .ps-container {
+    width: min(100% - 16px, 1280px);
+  }
+
+  .ps-track {
+    gap: 14px;
+  }
+
+  .ps-card {
+    width: 240px;
+    height: 320px;
+    border-radius: 18px;
+  }
+
+  .ps-visible,
+  .ps-overlay {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .ps-overlay p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .ps-logo-box {
+    width: 90px;
+  }
+}
+
+.course-heading {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 15px;
+}
+
+.course-text {
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1.2;
+    color: #111111;
+    margin: 0 0 12px;
+}
+
+.course-ph {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666666;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+    .course-heading {
+        margin-bottom: 30px;
+    }
+
+    .course-text {
+        font-size: 30px;
+    }
+
+    .course-ph {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 575px) {
+    .course-text {
+        font-size: 26px;
+    }
+
+    .course-ph {
+        font-size: 14px;
+        max-width: 100%;
+    }
+}

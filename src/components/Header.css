@@ -1,0 +1,340 @@
+:root {
+  --dz-white: #ffffff;
+  --dz-black: #000000;
+  --dz-gray: #666666;
+  --dz-light-bg: #f8f9fa;
+  --dz-body-bg: #eef2f7;
+  --dz-glass: rgba(255, 255, 255, 0.85);
+  --dz-glass-border: rgba(255, 255, 255, 0.6);
+  --dz-luxury-shadow: 0 15px 35px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.04);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: var(--dz-body-bg);
+}
+
+.dezora-header-shell {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 10px 0;
+  transition: 0.4s cubic-bezier(0.1, 1, 0.1, 1);
+}
+
+.dezora-header-shell.dz-scrolled-state {
+  background: var(--dz-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+  padding: 15px 0;
+  border-bottom: 1px solid var(--dz-glass-border);
+}
+
+.dezora-container {
+  width: min(1320px, calc(100% - 32px));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.dezora-brand-identity {
+  text-decoration: none;
+  color: var(--dz-black);
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+.dezora-brand-identity span {
+  color: var(--dz-gray);
+}
+
+.dezora-menu-cluster {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.dezora-cluster-node {
+  position: relative;
+}
+
+.dezora-menu-cluster > li > a,
+.dezora-nav-button {
+  text-decoration: none;
+  color: black !important;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.3s;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.dezora-menu-cluster > li:hover > a,
+.dezora-menu-cluster > li > 
+.dezora-cluster-node:hover > .dezora-nav-button,
+.dezora-nav-button:hover {
+  color: var(--dz-black);
+}
+
+/* Pure CSS clean arrow design (Jaise aapki screenshot me hai) */
+.dezora-angle-icon {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid var(--dz-black);
+  border-bottom: 1.5px solid var(--dz-black);
+  transform: rotate(45deg); /* Niche point karne ke liye */
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-left: 2px;
+  margin-top: -3px; /* Vertical align perfectly balance karne ke liye */
+}
+
+.dezora-mega-vault {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(15px);
+  background: var(--dz-white);
+  min-width: 240px;
+  border-radius: 16px;
+  padding: 12px 0;
+  box-shadow: var(--dz-luxury-shadow);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.1, 1, 0.1, 1);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.dezora-mega-vault a {
+  display: block;
+  padding: 10px 22px;
+  color: var(--dz-gray);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14.5px;
+  transition: all 0.2s ease;
+}
+
+.dezora-mega-vault a:hover {
+  background-color: var(--dz-light-bg);
+  color: var(--dz-black);
+  padding-left: 28px;
+}
+
+.dezora-action-trigger,
+.dezora-cellular-trigger {
+  text-decoration: none;
+  background: var(--dz-black);
+  color: var(--dz-white);
+  padding: 12px 26px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.dezora-action-trigger:hover,
+.dezora-cellular-trigger:hover {
+  background: var(--dz-gray);
+  color: var(--dz-white);
+  transform: translateY(-2px);
+}
+
+.dezora-cellular-trigger {
+  display: none;
+}
+
+.dezora-mobile-cta-wrap {
+  display: none;
+}
+
+.dezora-sandwich-pack {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1000;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.dezora-sandwich-pack span {
+  width: 26px;
+  height: 3px;
+  background: var(--dz-black);
+  border-radius: 50px;
+  transition: 0.3s ease;
+}
+
+.dezora-sandwich-pack.dz-pack-open span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.dezora-sandwich-pack.dz-pack-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.dezora-sandwich-pack.dz-pack-open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -7px);
+}
+
+/* Mobile responsive me click hone par upar point karega */
+.dz-rotate-icon {
+  transform: rotate(-135deg);
+  margin-top: 2px;
+}
+
+@media (min-width: 992px) {
+  .dezora-cluster-node:hover .dezora-mega-vault {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(5px);
+  }
+
+  /* Desktop par hover hone par arrow upar point karega (^) */
+  .dezora-cluster-node:hover > .dezora-nav-button .dezora-angle-icon {
+    transform: rotate(-135deg);
+    margin-top: 2px;
+  }
+}
+
+@media (max-width: 991px) {
+  .dezora-sandwich-pack {
+    display: flex;
+  }
+
+  .dezora-action-trigger {
+    display: none;
+  }
+
+  .dezora-menu-cluster {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    max-width: 100%;
+    height: 100vh;
+    background: var(--dz-white);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 100px 30px 40px;
+    gap: 15px;
+    transition: 0.4s cubic-bezier(0.1, 1, 0.1, 1);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.05);
+    overflow-y: auto;
+  }
+
+  .dezora-menu-cluster.dz-cluster-visible {
+    right: 0;
+  }
+
+  .dezora-menu-cluster li {
+    width: 100%;
+  }
+
+  .dezora-menu-cluster > li > a,
+  .dezora-nav-button {
+    width: 100%;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f3f5;
+    font-size: 16px;
+  }
+
+  .dezora-mega-vault {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none !important;
+    width: 100%;
+    min-width: 100%;
+    box-shadow: none;
+    background: var(--dz-light-bg);
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    visibility: visible;
+    opacity: 1;
+    border-radius: 8px;
+    border: none;
+    transition: max-height 0.3s ease-out, margin-top 0.3s ease-out, padding 0.3s ease-out;
+  }
+
+  .dezora-mega-vault.dz-vault-expanded {
+    max-height: 300px;
+    margin-top: 5px;
+    padding: 8px 0;
+  }
+
+  .dezora-mega-vault a {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .dezora-mobile-cta-wrap {
+    display: block;
+  }
+
+  .dezora-cellular-trigger {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 575px) {
+  .dezora-container {
+    width: min(100% - 24px, 1320px);
+  }
+
+  .dezora-brand-identity {
+    font-size: 26px;
+  }
+
+  .dezora-menu-cluster {
+    width: 100%;
+  }
+}
+
+.dezora-brand-identity{
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+}
+
+.dezora-logo{
+    width:170px;
+    height:auto;
+    display:block;
+}
+
+@media (max-width:768px){
+    .dezora-logo{
+        width:140px;
+    }
+}
